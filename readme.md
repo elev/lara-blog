@@ -6,3 +6,4 @@ Please intialize Laravel then add these files to the appropriate directories.
 
 Use this as you wish
 
+This is still in the initial phases of development.
