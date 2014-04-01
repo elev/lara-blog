@@ -30,7 +30,7 @@ Route::get('login', function(){
 	return View::make('user_login');
 });
 
-Route::post('login_check', function(){
+Route::post('login-check', function(){
 	$email = Input::get('email');
 	$password = Input::get('password');
 	if (Auth::attempt(array('email' => $email, 'password' => $password))){
@@ -40,11 +40,11 @@ Route::post('login_check', function(){
 	}
 });
 
-Route::get('blog_listing', function(){
+Route::get('blog-listing', function(){
 	$blogs = Blog::all();
-	return View::make('blog_listing')->with('blogs', $blogs);
+	return View::make('blog-listing')->with('blogs', $blogs);
 });
 
-Route::get('blog_create', function(){
-	return View::make('blog_create');
+Route::get('blog-create', function(){
+	return View::make('blog-create');
 });
