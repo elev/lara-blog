@@ -15,17 +15,8 @@ Route::get('/', function(){
 	return View::make('hello');
 });
 
-Route::get('users', function(){
-	$users = User::all();
-	return View::make('users')->with('users', $users);
-});
 
-Route::get('user/create', 'UserController@createNew');
-
-Route::get('user/{id}', 'UserController@showProfile');
-
-Route::post('user/create', 'UserController@processNew');
-
+// Login Routes
 Route::get('login', function(){
 	return View::make('user_login');
 });
@@ -39,12 +30,31 @@ Route::post('login-check', function(){
 		echo "login failed";
 	}
 });
+//
 
-Route::get('blog-listing', function(){
+// User routes
+Route::get('users', function(){
+	$users = User::all();
+	return View::make('users')->with('users', $users);
+});
+
+Route::get('user/create', 'UserController@createNew');
+
+Route::get('user/{id}', 'UserController@showProfile');
+
+Route::post('user/create', 'UserController@processNew');
+//
+
+// Blog Routes
+Route::get('blogs', function(){
 	$blogs = Blog::all();
 	return View::make('blog-listing')->with('blogs', $blogs);
 });
 
-Route::get('blog-create', function(){
+Route::get('blog/create', function(){
 	return View::make('blog-create');
 });
+
+Route::post('blog/create', 'BlogController@processNew');
+
+//
