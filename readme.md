@@ -10,3 +10,8 @@ This is still in the initial phases of development.
 
 ----
 TODO:
+
+User Create and Blog Posts will have to be done by other users.
+
+
+

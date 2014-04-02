@@ -18,7 +18,7 @@ Route::get('/', function(){
 
 // Login Routes
 Route::get('login', function(){
-	return View::make('user_login');
+	return View::make('user-login');
 });
 
 Route::post('login-check', function(){
@@ -38,7 +38,16 @@ Route::get('users', function(){
 	return View::make('users')->with('users', $users);
 });
 
-Route::get('user/create', 'UserController@createNew');
+Route::get('user/create', function(){
+			if(Auth::check()){ 
+				return View::make('user-create');
+			} else {
+				// figure out how to post message
+				return 'You must be logged in to access this area';
+				//$users = User::all();
+				//return View::make('users')->with('users', $users);
+			}
+		});
 
 Route::get('user/{id}', 'UserController@showProfile');
 
