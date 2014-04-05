@@ -15,19 +15,6 @@ Route::get('/', function(){
 	return View::make('hello');
 });
 
-// Auth Protected Routes
-Route::group(array('before' => 'auth'), function(){
-	Route::get('user/create', 'UserController@createNew');
-
-	Route::post('user/create', 'UserController@processNew');
-
-	Route::get('blog/create', function(){
-		return View::make('blog-create');
-	});
-
-	Route::post('blog/create', 'BlogController@processNew');
-});
-
 // Login Routes
 Route::get('login', function(){
 	return View::make('user-login');
@@ -50,7 +37,7 @@ Route::get('users', function(){
 	return View::make('users')->with('users', $users);
 });
 
-Route::get('user/{id}', 'UserController@showProfile'); 
+Route::get('user/user{id}', 'UserController@showProfile');
 //
 
 
@@ -58,5 +45,19 @@ Route::get('user/{id}', 'UserController@showProfile');
 Route::get('blogs', function(){
 	$blogs = Blog::all();
 	return View::make('blog-listing')->with('blogs', $blogs);
+});
+//
+
+// Auth Protected Routes
+Route::group(array('before' => 'auth'), function(){
+	Route::get('user/create', 'UserController@createNew');
+
+	Route::post('user/create', 'UserController@processNew');
+
+	Route::get('blog/create', function(){
+		return View::make('blog-create');
+	});
+
+	Route::post('blog/create', 'BlogController@processNew');
 });
 //
