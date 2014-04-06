@@ -11,11 +11,11 @@
 					</div><!--/.navbar-header-->
 					<div class="navbar-collapse collapse">
 						<ul class="nav navbar-nav">
-							<li>{{ HTML::link('users', 'Users') }}</li>
-							<li>{{ HTML::link('user/create', 'Create Users') }}</li>
-							<li>{{ HTML::link('blogs', 'Blogs') }}</li>
-							<li>{{ HTML::link('blog/create', 'Create Blog Posts') }}</li>
-							<li>{{ HTML::link('login', 'Login') }}</li>
+							{{ HTML::clever_link('users', 'Users') }}
+							{{ HTML::clever_link('user/create', 'Create Users') }}
+							{{ HTML::clever_link('blogs', 'Blogs') }}
+							{{ HTML::clever_link('blog/create', 'Create Blog Posts') }}
+							{{ HTML::clever_link('login', 'Login') }}
 						</ul>
 					</div><!--/.navbar-collapse-->
 				</div><!--/.container-fluid-->

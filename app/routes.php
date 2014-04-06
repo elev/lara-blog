@@ -67,3 +67,14 @@ Route::group(array('before' => 'auth'), function(){
 	Route::post('blog/create', 'BlogController@processNew');
 });
 //
+
+// Macros
+
+HTML::macro('clever_link', function($route, $text) {	
+	if( Request::path() == $route ) {
+		$active = "class = 'active'";
+	} else {
+		$active = '';
+	}
+  return '<li ' . $active . '>' . link_to($route, $text) . '</li>';
+});
