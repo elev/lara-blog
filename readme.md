@@ -10,7 +10,9 @@ This is still in the initial phases of development.
 
 ----
 TODO:
-bring in bootstrap, make forms look better
+
+Style blogs
+Build a Navigation system.
 
 
 
