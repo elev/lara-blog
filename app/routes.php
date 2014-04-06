@@ -12,12 +12,18 @@
 */
 
 Route::get('/', function(){
-	return View::make('home');
+	//return View::make('home');
+	$blogs = Blog::all();
+	return View::make('blog-listing')->with('blogs', $blogs);
 });
 
 // Login Routes
 Route::get('login', function(){
-	return View::make('user-login');
+	if (Auth::check()){
+		return "you are already logged in";
+	} else {
+		return View::make('user-login');
+	}
 });
 
 Route::post('login-check', function(){
