@@ -11,8 +11,10 @@ This is still in the initial phases of development.
 ----
 TODO:
 
-Style blogs
-Build a Navigation system.
+Create update and delete for people and blog posts,
+create a roles area for people,
+level 1 can create posts
+level 2 can add new people and posts.
 
 
 
