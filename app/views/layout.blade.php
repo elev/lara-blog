@@ -1,6 +1,8 @@
 <html>
 	<head>
 		{{ HTML::style('packages/bootstrap-3.1.1-dist/css/bootstrap.css') }}
+		<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.16/angular.min.js"></script>
+		{{ HTML::script('js/blog-controller.js') }}
 	</head>
 	<body>
 		<div class="container">

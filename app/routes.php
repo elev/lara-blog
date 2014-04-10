@@ -17,6 +17,11 @@ Route::get('/', function(){
 	return View::make('blog-listing')->with('blogs', $blogs);
 });
 
+Route::get('angular', function(){
+	return View::make('angular');
+});
+
+
 // Login Routes
 Route::get('login', function(){
 	if (Auth::check()){
@@ -51,6 +56,10 @@ Route::get('user/user{id}', 'UserController@showProfile');
 Route::get('blogs', function(){
 	$blogs = Blog::all();
 	return View::make('blog-listing')->with('blogs', $blogs);
+});
+
+Route::get('get-blogs', function(){
+	return Blog::all();
 });
 //
 

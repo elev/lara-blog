@@ -19,6 +19,15 @@ class BlogController extends BaseController {
 		return View::make('blog-listing')->with('blogs', $blogs);
 	}
 
+	public function blogJson(){
+		return '[
+					{"name" : "aahello world",
+					"content" : "this is a hello world statement"},
+					{"name" : "laaorem ipsum",
+					"content" : "lorem ipsum dolor sit imit"}
+				]';
+	}
+
 }
 
 ?>
